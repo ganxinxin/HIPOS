@@ -1,0 +1,17 @@
+<!--pages/posinfo/poslist.wxml-->
+
+<import src="../common/foot.wxml" />
+
+<scroll-view scroll-y="true" style="color: {{elecolor}};font-size: {{eleFontsize}}" bindscrolltolower="bindDownLoad">
+  <!-- 列表 -->
+  <view class="themes-list">
+    <view class="themes-list-box" wx:for="{{list}}" wx:for-item="itemName" data-index="{{index}} " bindtap='gotoPosInfoDetail'>
+      <view class="themes-list-main">
+        <view class="themes-list-posdetail">机器编号：{{itemName.poscode}}</view>
+        <view class="themes-list-posdetail">安装位置：{{itemName.setupaddr}}</view>
+        <view class="themes-list-posdetail">出厂编号：{{itemName.possn}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<template is="foot" />

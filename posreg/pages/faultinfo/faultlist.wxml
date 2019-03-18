@@ -1,0 +1,51 @@
+<!--pages/faultinfo/faultlist.wxml-->
+<import src="../common/foot.wxml" />
+
+<!-- loading -->
+<loading hidden="{{hidden}}">
+    加载中...
+</loading>
+
+<view class="search-area"> 
+
+    <!-- 时间段 -->  
+    <picker mode="date" value="{{date}}"  end="{{date2}}" bindchange="bindDateChange">  
+          <view class="picker">  
+            {{date}}  
+          </view>  
+        </picker>  
+        至  
+        <picker mode="date" value="{{date2}}" start="{{date}}" end="2050-01-01" bindchange="bindDateChange2">  
+          <view class="picker">  
+            {{date2}}  
+          </view>  
+    </picker>  
+    <button type="primary" size="mini" bindtap="bindSearch" loading="{{data.loading}}"> 立即搜索 </button>
+
+</view>
+
+<scroll-view scroll-y="true" style="height: 100%;" >
+
+      <!-- 列表 -->
+      <view class="themes-list">
+        <view class="themes-list-box" wx:for="{{dataFaults}}" wx:for-item="item" wx:for-index="i">
+                <navigator url="../faultinfo/faultdetail?id={{item.faultid}}">
+                    <view class="themes-list-thumbnail">
+                        <view class= "themes-list-number">故障编码:{{item.faultcode}}</view>
+                    </view>
+                    <view class="themes-list-main">
+                        <view class="themes-list-description" mode="widthFix">故障信息:'{{item.faultinfo}}'</view>
+                        <view class="themes-list-time" mode="widthFix">时间:{{item.faultdatetime}}</view>
+                    </view>
+                </navigator>
+          </view>
+      </view>
+
+</scroll-view>
+
+<!--圆形点击框  -->
+<view class="round-click">
+   <navigator url="../faultinfo/aaa">故障上报</navigator >
+</view>
+
+<template is="foot"/> 

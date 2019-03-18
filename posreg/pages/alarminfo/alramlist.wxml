@@ -1,0 +1,46 @@
+<!--pages/alarminfo/alramlist.wxml-->
+<import src="../common/foot.wxml" />
+
+<!-- loading -->
+<loading hidden="{{hidden}}">
+    加载中...
+</loading>
+
+<view class="search-area"> 
+
+    <!-- 时间段 -->  
+    <picker mode="date" value="{{date}}"  end="{{date2}}" bindchange="bindDateChange">  
+          <view class="picker">  
+            {{date}}  
+          </view>  
+        </picker>  
+        至  
+        <picker mode="date" value="{{date2}}" start="{{date}}" end="2050-01-01" bindchange="bindDateChange2">  
+          <view class="picker">  
+            {{date2}}  
+          </view>  
+    </picker>  
+    <button type="primary" size="mini" bindtap="bindSearch" loading="{{data.loading}}"> 立即搜索 </button>
+
+</view>
+
+<scroll-view scroll-y="true" style="height: 100%;" >
+
+      <!-- 列表 -->
+      <view class="themes-list">
+        <view class="themes-list-box" wx:for="{{dataThemes}}" wx:for-item="item" wx:for-index="i">
+                <navigator url="../alarminfo/alarmdetail?id={{dataThemes[i].alarmid}}">
+                    <view class="themes-list-thumbnail">
+                        <view class= "themes-list-number">报警编码:{{item.alarmcode}}</view>
+                    </view>
+                    <view class="themes-list-main">
+                        <view class="themes-list-description" mode="widthFix">报警内容:'{{item.alarminfo}}'</view>
+                        <view class="themes-list-time" mode="widthFix">时间:{{item.alarmdatetime}}</view>
+                    </view>
+                </navigator>
+          </view>
+      </view>
+
+</scroll-view>
+
+<template is="foot"/> 

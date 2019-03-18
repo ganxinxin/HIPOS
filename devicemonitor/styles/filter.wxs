@@ -1,0 +1,106 @@
+function status(id) {
+  var statusJson = {};
+  var x = "";
+  var y = "";
+
+  switch (id) {
+    case "0":
+      x = "在线";
+      y = "#00BF00";
+      break;
+    case "1":
+      x = "离线";
+      y = "#A9A9A9";
+      break;
+    case "2":
+      x = "在库";
+      y = "#FFA500";
+      break;
+    case "3":
+      x = "报废";
+      y = "#FF0000";
+      break;
+    default:
+      x = "";
+      y = "";
+      break;
+  }
+  statusJson.x = x;
+  statusJson.y = y;
+  return statusJson;
+}
+function statusFaultSrc(id) {
+  var statusJson = {};
+  var x = "";
+
+  switch (id) {
+    case "0":
+      x = "阈值 ";
+      break;
+    case "1":
+      x = "硬件心跳";
+      break;
+    case "2":
+      x = "软件心跳";
+      break;
+    case "3":
+      x = "软件白名单";
+      break;
+    case "4":
+      x = "软件黑名单";
+      break;
+    default:
+      x = "";
+      break;
+  }
+  statusJson.x = x;
+  return statusJson;
+}
+function statusFaultLevel(id) {
+  var statusJson = {};
+  var x = "";
+
+  switch (id) {
+    case "0":
+      x = "一般";
+      break;
+    case "1":
+      x = "警告";
+      break;
+    case "2":
+      x = "严重";
+      break;
+    default:
+      x = "";
+      break;
+  }
+  statusJson.x = x;
+  return statusJson;
+}
+function statusFaultState(id) {
+  var statusJson = {};
+  var x = "";
+
+  switch (id) {
+    case 0:
+      x = "已发生";
+      break;
+    case 1:
+      x = "处理中";
+      break;
+    case 2:
+      x = "关闭";
+      break;
+    default:
+      x = "";
+      break;
+  }
+  statusJson.x = x;
+  return statusJson;
+}
+module.exports = {
+  status: status,
+  statusFaultSrc: statusFaultSrc,
+  statusFaultLevel:statusFaultLevel,
+  statusFaultState: statusFaultState
+}

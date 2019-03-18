@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Title: dubbo-pos-provider
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: wliudm
+Specification-Vendor: Alibaba
+Specification-Title: dubbo-pos-provider
+Implementation-Vendor-Id: com.alibaba
+Build-Jdk: 1.8.0_66
+Specification-Version: 0.0.1-SNAPSHOT
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Alibaba
+

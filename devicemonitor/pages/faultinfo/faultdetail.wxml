@@ -1,0 +1,57 @@
+<wxs src='../../styles/filter.wxs' module='filters' />
+<scroll-view class="scroll-view" scroll-y="true" bindscrolltolower="lower" bindscrolltoupper="upper" style="height:{{windowHeight}}px">
+    <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" data-idx="{{idx}}" >
+        <view class="feed-item">
+            <view class="feed-source">
+                <a href="" class="head-topic">
+                  <view class="avatar">
+                    <image src="/images/market.png"></image>
+                  </view>
+                  <text>故障来源：{{filters.statusFaultSrc(item.faultSrc).x}}</text>
+                </a>
+                <!--遮罩层-->
+                <!-- <view class="drawer_screen" bindtap="hide" data-statu="close" wx:if="{{showModalStatus}}"></view> -->
+                <!--弹窗事件触发-->
+                <!-- <view bindtap="powerDrawer" data-statu="open" data-answerId="{{item.answer_id}}">
+                  <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+                </view> -->
+            </view>
+            <view class="feed-content">
+                <!--问题详情跳转-->
+                <view class="question" bindtap="questionDetailTap">
+                  <a href="" class="question-link">
+                    <text>故障类型：{{item.faultType}}</text>
+                  </a>
+                </view>
+                <view class="answer-body">
+                    <!--回答详情跳转-->
+                    <view bindtap="bindItemTap">
+                      <text class="answer-txt">{{item.faultContent}}</text>
+                    </view>
+                    <view class="answer-actions">
+                      <view class="like dot">
+                        <a>报警次数-{{item.faultCount}} </a>
+                      </view> 
+                      <!--评论 页面跳转-->
+                      <view class="comments dot" bindtap="commentTap">
+                        <a>严重程度-{{filters.statusFaultLevel(item.faultLevel).x}}</a>
+                      </view>
+                      <view class="follow-it" bindtap="followQuestion" data-questionId="{{item.answer_id}}">
+                        <text>故障状态-{{filters.statusFaultState(item.faultState).x}}</text>
+                      </view>
+                    </view> 
+                </view>
+            </view>
+            <!--弹窗页面-->
+            <!-- <view animation="{{animationData}}" data-answerId="{{item.answer_id}}" class="drawer_box" wx:if="{{showModalStatus&&item.isSelected}}">
+                <view class="drawer_shield">屏蔽这个问题</view>
+                <view class="drawe_report">举报</view>
+            </view> -->
+        </view>
+    </block>
+</scroll-view>
+
+<!--圆形点击框  -->
+<view class="round-click">
+   <navigator url="../faultinfo/faultreport">故障上报</navigator >
+</view>

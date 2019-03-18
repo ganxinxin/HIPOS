@@ -1,0 +1,96 @@
+<!--index.wxml-->
+<view class="card">
+  <!-- <view class="weui-cell weui-cell_access " hover-class="weui-cell_active">
+    <view class="weui-cell__bd">用户名：</view>
+    <view class="weui-cell__ft">
+      <text class="complete-pre">{{usercode}}</text>
+    </view>
+  </view> -->
+
+  <view class="function-area">
+    <view class="function-list">
+      <navigator hover-class="navigator-hover">
+        <view class="function">
+          <text class="complete-pre">{{totalcount}}</text>
+          <text>全部设备</text>
+        </view>
+      </navigator>
+      <navigator hover-class="navigator-hover">
+        <view class="function">
+          <text class="pos-running">{{regularcount}}</text>
+          <text class="pos-running">运行设备</text>
+        </view>
+      </navigator>
+      <navigator hover-class="navigator-hover">
+        <view class="function">
+          <text class="pos-offline">{{unregularcount}}</text>
+          <text class="pos-offline">未运行设备</text>
+        </view>
+      </navigator>
+      <navigator hover-class="navigator-hover">
+        <view class="function no-border">
+          <text class="pos-abnormal">{{faultcount}}</text>
+          <text class="pos-abnormal">异常设备</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view>
+
+  <!-- <view class="{{isFold?'hide':'show'}}">
+    <button type="default" size="mini" bindtap="flodFn"> 点击收起图表↑</button>-->
+    <!--<view class='card canvasnone'>
+  <view class="page-section page-section-spacing swiper ">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" duration="{{duration}}" bindchange="changecanvas" style="height:{{swiperheight}}rpx;">
+        <block wx:for="{{backgroundcanvas}}" wx:key="item">
+          <swiper-item>
+            <view>
+              <text class="complete-center">{{chartname}}</text>
+              <canvas class="canvas" canvasId="{{canvasId}}" src="{{item}}" style="height:{{canvasrheight}}rpx;width:100%"></canvas>
+            </view>
+
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>-->
+  <!-- </view>-->
+
+   <view class="card canvasnone">
+        <text class='complete-center'>{{chartname}}</text>
+        <canvas canvas-id="pieCanvas" class="canvas" style="height:{{canvasrheight}}rpx;width:100%"  bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas>
+    </view>
+
+  <!--
+  <view class=" {{isFold?'show':'hide'}}">
+    <view>
+      <button type="default" size="mini" loading="{{loading}}" bindtap="flodFn"> 点击展开图表↓</button>
+    </view>
+  </view>-->
+</view>
+
+<view class="content-container">
+  <scroll-view class='classify-container' scroll-y="true" scroll-with-animation="true">
+    <view class="classify {{classifyViewed==classify.id?'active':''}}" wx:for="{{categories}}" wx:for-item="classify" wx:key="id" data-id="{{classify.id}}" bindtap="tapClassify">
+      <view class="name {{classifyViewed==classify.id?'active':''}}">{{classify.name}}</view>
+    </view>
+  </scroll-view>
+
+  <scroll-view class="detail-container" scroll-y="true" scroll-top="{{scrolltop}}">
+    <view data="{{detailListCurrent}}">
+      <view class="title">
+        {{detailListCurrent.name}}
+      </view>
+      <view class="detail" wx:for="{{detailListCurrent.detail}}" wx:key="index" wx:for-item="item" data-id='{{item.id}}' data-uuid='{{item.uuid}}' data-eqtstate='{{item.eqtState}}' bindtap="toDetailsTap">
+        <image class="pic" src="{{item.imgUrl}}">
+          <text class="show">{{item.property}}</text>
+          <image class='fresh-tag' src="{{item.otherUrl}}"></image>
+        </image>
+        <text class="name">{{item.eqtName}}</text>
+      </view>
+      <wxc-loadmore is-end="{{true}}" icon="{{true}}" style="position: relative; bottom: 0rpx;"></wxc-loadmore>
+    </view>
+  </scroll-view>
+</view>

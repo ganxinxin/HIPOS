@@ -1,0 +1,58 @@
+<!--pages/posinfo/posinfo.wxml-->
+
+<import src="../common/foot.wxml" />
+<view class="container">
+
+<!-- loading -->
+  <loading hidden="{{hidden}}">
+    查询中...
+  </loading>
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>出厂编号:</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{possn}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>POS编号:</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{poscode}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>安装位置:</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{setupaddr}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>门店编号:</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{shopcode}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>门店名称:</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{shopname}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>门店位置:</view>
+    <view class='item-title'>经度：</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' type='text' placeholder='' value='{{longitude}}' disabled='true'></input>  
+  </view>
+
+ <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+     <view class='item-sub-title'>纬度：</view>
+     <view class='item-xing'>*</view>
+    <input class='item-content' type='text' placeholder='' value='{{latitude}}' disabled='true'></input>
+  </view>
+  
+  <view class='enroll-item' mode="widthFix" style="margin-top:160rpx;">
+    <view class='sign-up' mode="widthFix" bindtap='queryPosInfo'>基本信息</view>
+    <view class='sign-down' mode="widthFix" bindtap='queryPosConfigure'>配置信息</view>
+  </view>
+</view>
+<template is="foot" />

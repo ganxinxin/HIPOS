@@ -1,0 +1,124 @@
+/* 圆形点击框布局 */
+.round-click{
+
+    height: 120rpx;
+    width: 120rpx;
+    background-color: #00A8A8;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 150rpx;
+    right: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+.round-click navigator{
+  
+    font-size: 32rpx;
+    max-width: 80rpx;
+    color: #fff;
+    text-align: center;
+}
+
+
+/* 列表布局 */
+.feed-item{
+    /*width: 100%; */
+     padding: 30rpx 30rpx 30rpx 30rpx;
+     border-top: 20rpx solid #EBEBEB;
+     position: relative;
+     
+}
+.feed-item .feed-source{
+    /*width: 100%;*/
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.feed-item .feed-source image{
+    display: inline-block;
+    width: 45rpx;
+    height: 45rpx;
+    border-radius: 45rpx;
+    top: 10rpx;
+    vertical-align: middle;
+}
+.feed-item .feed-source text{
+  /*position: absolute;*/
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  vertical-align: middle;
+  margin: 0 0 0 15rpx;
+  color: #a0acac;
+  font-size: 26rpx;
+}
+.feed-item .feed-source .head-topic .avatar{
+    display: inline-block;
+}
+.feed-item .feed-source .item-more{
+  display: inline-block;
+  width: 40rpx;
+  height: 45rpx;
+}
+.feed-item .feed-content{
+  padding: 10rpx 0 0 0;
+}
+.feed-item .feed-content .question text{
+  font-size: 28rpx;
+  font-weight: 600px;
+  line-height: 40rpx;
+  letter-spacing: 3rpx;
+}
+.feed-item .feed-content .answer-body{
+  padding: 10rpx 0 0 0;
+  /*height: 10rpx;*/
+  font-size: 24rpx;
+  line-height: 38rpx;
+  color: #5b5b5b;
+}
+.feed-item .feed-content .answer-actions{
+  /*width: 690rpx;*/
+  padding: 10rpx 0  0;
+  color: #a0acac;
+}
+.feed-item .feed-content .answer-actions view{
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding: 0 10rpx 0 0;
+  font-size: 24rpx;
+}
+.feed-item .feed-content .answer-actions .dot ::after{
+  content: "•";
+  padding-left: 5rpx;
+}
+.feed-source .drawer_screen{
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 10000;  
+  background: #000;  
+  opacity: 0.1;  
+  overflow: hidden;  
+}
+.feed-item .drawer_box{
+  width: 90%;
+  height: 180rpx;
+  border-radius: 20rpx; 
+  background: #FAFAFA;
+  /*position: fixed;*/
+  position: absolute;
+  top: 25%;
+  z-index: 10001;
+  overflow: hidden; 
+} 
+.feed-item .drawer_shield,.drawe_report {
+  padding: 20rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #EBEBEB;
+}

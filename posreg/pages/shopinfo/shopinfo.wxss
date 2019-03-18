@@ -1,0 +1,47 @@
+/* pages/shopinfo/shopinfo.wxss */
+page {
+  background-color: #eaeaea;
+}
+.container {
+  padding: 0rpx;
+}
+
+.enroll-item {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 750rpx;
+  height: 80rpx;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.item-title {
+  font-size: 30rpx;
+  color: #8a8a8a;
+  white-space: nowrap;
+  margin-left: 24rpx;
+}
+
+.item-sub-title {
+  font-size: 30rpx;
+  color: #8a8a8a;
+  white-space: nowrap;
+  margin-left: 165rpx;
+}
+
+.item-xing {
+  color: #fc6262;
+}
+
+.item-content {
+  font-size: 28rpx;
+  color: #8a8a8a;
+  flex: 1;
+  text-align: right;
+  padding-right: 24rpx;
+  word-break:break-all; 
+}
+
+
+

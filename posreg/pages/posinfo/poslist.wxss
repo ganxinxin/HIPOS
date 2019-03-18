@@ -1,0 +1,26 @@
+/* pages/posinfo/poslist.wxss */
+@import "../common/foot.wxss";
+
+.themes-list{ 
+  background: #FFF; 
+  display: block; 
+  margin-bottom: 20px; 
+}
+
+.themes-list-box{ 
+  display: block; 
+  position: relative; 
+  padding: 16px 20px; 
+  border-bottom: 1px solid #F2F2F2; 
+}
+
+.themes-list-thumbnail{ 
+  position: absolute; 
+  left: 20px; 
+  top: 16px; 
+  height: 40px;
+   width: 40px; 
+}
+
+.themes-list-main{ margin-left: 12px; }
+.themes-list-posdetail{ font-size: 14px; color: #444; height: 20px; line-height: 20px; overflow: hidden;}

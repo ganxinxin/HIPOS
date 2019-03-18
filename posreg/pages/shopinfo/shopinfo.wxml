@@ -1,0 +1,41 @@
+<!--pages/shopinfo/shopinfo.wxml-->
+
+<view class='container'>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>门店编号:</view>
+    <input class='item-content' value='{{shopcode}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>门店名称:</view>
+    <input class='item-content' value='{{shopname}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>地理位置:</view>
+    <input class='item-content' value='{{shopaddr}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>店长电话:</view>
+    <input class='item-content' value='{{leaderphone}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>管理员电话:</view>
+    <input class='item-content' value='{{managerphone}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>门店位置:</view>
+    <view class='item-title'>经度：</view>
+    <input class='item-content' type='text' placeholder='' value='{{longitude}}' disabled='true'></input>  
+  </view>
+
+ <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+     <view class='item-sub-title'>纬度：</view>
+    <input class='item-content' type='text' placeholder='' value='{{latitude}}' disabled='true'></input>
+  </view>
+
+</view>

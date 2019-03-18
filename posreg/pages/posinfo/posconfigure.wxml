@@ -1,0 +1,51 @@
+<!--pages/posinfo/posconfigure.wxml-->
+<import src="../common/foot.wxml" />
+<view class="container">
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>出厂编号:</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{possn}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>CPU信息:</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{cpu}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>内存信息:</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{memery}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>硬盘信息:</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{harddisk}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>系统版本:</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{systemversion}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>海信版本:</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{hiversion}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:160rpx;">
+    <view class='sign-up' mode="widthFix" bindtap='queryPosInfo'>基本信息</view>
+    <view class='sign-down' mode="widthFix" bindtap='queryPosConfigure'>配置信息</view>
+  </view>
+  <!---
+  <view class='btn-area'  style="margin-top:160rpx;">
+      <button  bindtap ="queryPosInfo">基本信息</button>
+      <button  type="primary" bindtap ="queryPosConfigure">配置信息</button>
+    </view>
+  -->
+  <template is="foot" />
+</view>

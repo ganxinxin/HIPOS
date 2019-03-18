@@ -1,0 +1,33 @@
+<view class='container'>
+
+  <!-- loading -->
+  <loading hidden="{{hidden}}">
+    <text class="load">{{laodText}}</text>
+  </loading>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>设备ID</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' type='text' placeholder='请输入设备ID' value='{{setMachineID}}' bindinput='setMachineIDInput'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>故障来源</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' type='text' placeholder='阈值|硬件心跳|软件心跳|其他' value='{{setFaultSrc}}' bindinput='setFaultSrcInput'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>严重程度</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' type='text' placeholder='一般|警告|严重' value='{{setFaultLevel}}' bindinput='setFaultLevelInput'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>故障内容</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' type='text' placeholder='请输入故障内容' value='{{setFaultContent}}' bindinput='setFaultContentInput'></input>
+  </view>
+
+  <view class='sign-up' hover-class="none" bindtap='submitInfos'>提交处理</view>
+</view>

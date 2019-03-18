@@ -1,0 +1,32 @@
+/* pages/posinfo/posreg.wxss */
+@import "../common/weui.wxss";
+@import "../common/foot.wxss";
+.page-section-title{
+  font-size: 40rpx;
+  color: #000000;
+  margin-bottom: 0rpx;
+  padding-left: 1rpx;
+  padding-right: 1rpx;
+  width: 180rpx;
+}
+.weui-input_hiden {
+  height: 2.58823529em;
+  min-height: 2.58823529em;
+  line-height: 2.58823529em;
+  display: none;
+}
+.weui-input-sfont {
+  height: 2.58823529em;
+  min-height: 2.58823529em;
+  line-height: 2.58823529em;
+  font-size: 32rpx;
+  display: none;
+}
+label {
+  display: inline-block;
+  min-width: 270rpx;
+  margin-right: 20rpx;
+}
+form{
+  width: 95%;
+}

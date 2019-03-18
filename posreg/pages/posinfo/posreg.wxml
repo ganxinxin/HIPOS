@@ -1,0 +1,88 @@
+<!--pages/posinfo/posreg.wxml-->
+<import src="../common/foot.wxml" />
+<view class="">
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">     
+      <view class="page-section">
+        
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="page-section-title">出厂编号:</view>
+            <view class="weui-cell__bd">
+              <input name="possn" class="weui-input" value='{{possn}}' placeholder="请输入出厂编号" />
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="page-section-title">出厂日期:</view>
+            <view class="weui-cell__bd">
+              <input name="posdate" class="weui-input" value='{{posdate}}' placeholder="" />
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="page-section-title">POS编号:</view>
+            <view class="weui-cell__bd">
+              <input name="poscode" class="weui-input" placeholder="请输入POS编号" />
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="page-section-title">安装位置:</view>
+            <view class="weui-cell__bd">
+              <input name="setupaddr" class="weui-input" placeholder="请输入安装位置" />
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="page-section-title">门店编号:</view>
+            <view class="weui-cell__bd">
+              <input name="shopcode" class="weui-input" placeholder="请输入门店编号" />
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="page-section-title">门店名称:</view>
+            <view class="weui-cell__bd">
+              <input name="shopname" class="weui-input" placeholder="请输入门店名称" />
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="page-section-title">门店位置:</view>
+            <view class="page-section--sub-title">经度:</view>
+            <view class="weui-cell__bd">
+              <input name="longitude" class="weui-input" plcaeholder="" />
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="page-section-title"> </view>
+            <view class="page-section--sub-title">纬度:</view>
+            <view class="weui-cell__bd">
+              <input name="latitude" class="weui-input" placeholder="" ></input>
+              <input name="weixinid" class="weui-input_hiden" value="{{weixinid}}" plcaeholder=""></input>
+              <input name="shopid" class="weui-input_hiden" value="{{shopid}}" plcaeholder=""></input>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="btn-area">
+        <button type="primary" formType="submit">提交</button>
+        <button formType="reset">重置</button>
+      </view>
+    </form>
+  </view>
+
+  <template is="foot" />
+</view>

@@ -1,0 +1,16 @@
+<template name="foot">
+<view class="flex fix_nav_wp">
+  <view class="nav_link" >
+    <button class="defalut_btn on_cor" bindtap='gototabreg'>
+      <image src='../../image/reg.png' class="plus_ico" />
+      <text class="txt">机器注册</text>
+    </button>
+  </view>
+  <view class="nav_link" >
+    <button class="defalut_btn" bindtap='gototabmyshop'>
+       <image src='../../image/icon_component.png' class="plus_ico" />
+       <text class="txt">我的门店</text>
+    </button>
+  </view>      
+  </view>      
+</template>

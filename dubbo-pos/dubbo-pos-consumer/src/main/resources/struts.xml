@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-default.xml" />
+	<constant name="struts.multipart.maxSize" value="200000000" />
+	<package name="struts2" extends="json-default">
+		<global-results>
+			<result name="test">/test.jsp</result>
+		</global-results>
+
+		<!-- Web端调用接口 -->
+		<action name="checkUser" class="com.point.community.SysUserInfoAction"
+			method="checkUser">
+			<result type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+		</action>
+		<action name="queryUser" class="com.point.community.SysUserInfoAction"
+			method="queryUser">
+			<result type="json">
+				<param name="includeProperties">success,msg,sysuserinfo.*</param>
+			</result>
+		</action>
+		<action name="registerPosInfo" class="com.point.community.SysPosInfoAction"
+			method="registerPosInfo">
+			<result type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+		</action>
+		<action name="queryPosInfo" class="com.point.community.SysPosInfoAction"
+			method="queryPosInfo">
+			<result type="json">
+				<param name="includeProperties">success,msg,posinfo.*,shopinfo.*,posstatus.*</param>
+			</result>
+		</action>
+		<action name="queryPosList" class="com.point.community.SysPosInfoAction"
+			method="queryPosList">
+			<result type="json">
+				<param name="includeProperties">success,msg,posinfolist.*</param>
+			</result>
+		</action>
+		<action name="queryPosStatus" class="com.point.community.SysPosInfoAction"
+			method="queryPosStatus">
+			<result type="json">
+				<param name="includeProperties">success,msg,posstatus.*</param>
+			</result>
+		</action>
+		
+		<action name="queryShopList" class="com.point.community.SysShopInfoAction"
+			method="queryShopList">
+			<result type="json">
+				<param name="includeProperties">success,msg,shopinfolist.*</param>
+			</result>
+		</action>
+		<action name="queryShopInfo" class="com.point.community.SysShopInfoAction"
+			method="queryShopInfo">
+			<result type="json">
+				<param name="includeProperties">success,msg,shopinfo.*</param>
+			</result>
+		</action>
+		<!--报警相关接口-->		
+		<action name="queryAlarmList" class="com.point.community.SysAlarmAction"
+			method="queryAlarmList">
+			<result type="json">
+				<param name="includeProperties">success,msg,alarmlist.*</param>
+			</result>
+		</action>		
+		<action name="queryOneAlarm" class="com.point.community.SysAlarmAction"
+			method="queryOneAlarm">
+			<result type="json">
+				<param name="includeProperties">success,msg,alarminfo.*</param>
+			</result>
+		</action>		
+		<action name="dealAlarm" class="com.point.community.SysAlarmAction"
+			method="dealAlarm">
+			<result type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+		</action>		
+		<!--故障相关接口-->		
+		<action name="queryFaultList" class="com.point.community.SysFaultAction"
+			method="queryFaultList">
+			<result type="json">
+				<param name="includeProperties">success,msg,sysfaultlist.*</param>
+			</result>
+		</action>		
+		<action name="queryOneFault" class="com.point.community.SysFaultAction"
+			method="queryOneFault">
+			<result type="json">
+				<param name="includeProperties">success,msg,sysfault.*</param>
+			</result>
+		</action>		
+		<action name="updateFaultDealFlag" class="com.point.community.SysFaultAction"
+			method="updateFaultDealFlag">
+			<result type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+		</action>		
+		
+	</package>
+</struts>

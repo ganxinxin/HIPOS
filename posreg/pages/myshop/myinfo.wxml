@@ -1,0 +1,8 @@
+<!--pages/shopinfo/myinfo.wxml-->
+<import src="../common/foot.wxml" />
+<view class="container">
+  <view class="page-body">
+    <text>pages/shopinfo/myinfo.wxml</text>
+  </view>
+  <template is="foot"/> 
+</view>

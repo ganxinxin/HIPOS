@@ -1,0 +1,65 @@
+<!--pages/faultinfo/faultdetail.wxml-->
+<view class='container'>
+
+  <!-- loading -->
+  <loading hidden="{{hidden}}">
+    <text class="load">{{laodText}}</text>
+  </loading>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>故障编号</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{getFaultID}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>故障时间</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{getFaultTime}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>故障内容</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{getFaultContent}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>机器编号</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{getMachineNumber}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>门店编号</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{getStoreNumber}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>处理方法</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' type='text' placeholder='请输入处理方法' value='{{setDealMethod}}' bindinput='setDealMethodInput'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>处理时间</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{getDealTime}}' disabled='true'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>处理人</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' type='text' placeholder='请输入处理人' value='{{setDealPerson}}' bindinput='setDealPersonInput'></input>
+  </view>
+
+  <view class='enroll-item' mode="widthFix" style="margin-top:2rpx;">
+    <view class='item-title'>处理标准</view>
+    <view class='item-xing'>*</view>
+    <input class='item-content' value='{{setDealStandard}}' disabled='true'></input>
+  </view>
+
+  <view class='sign-up' bindtap='submitInfos'>提交处理</view>
+
+</view>

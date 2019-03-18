@@ -1,0 +1,34 @@
+<!--pages/myshops/myshop.wxml-->
+  <view class="page-body">
+    <view class="btn-area">
+    <block wx:if="{{weixinid!=''&&weixinid!=null}}">
+        <navigator url="../shopinfo/shoplist"  open-type="navigate" target="self" hover-class="other-navigator-hover">
+          <button type="default">我的门店信息</button>
+        </navigator>
+        <navigator url="../posinfo/poslist"  open-type="navigate" hover-class="other-navigator-hover">
+          <button type="default">我的机器信息</button>
+        </navigator>
+        <navigator url="../alarminfo/alramlist" open-type="navigate" hover-class="other-navigator-hover">
+          <button type="default">报警信息查看</button>
+        </navigator>
+        <navigator url="../faultinfo/faultlist"  open-type="navigate" hover-class="other-navigator-hover">
+          <button type="default">故障信息上报</button>
+        </navigator>
+        <navigator url="myinfo"  open-type="navigate" hover-class="other-navigator-hover">
+          <button type="default">我的信息</button>
+        </navigator>      
+      </block> 
+      <block wx:if="{{weixinid==''||weixinid==null}}">
+      <view class="page-section">
+        <block wx:if="{{hasLogin === true}}">
+          <text class="page-body-text">微信已登录</text>
+         <button class="page-right-button"  type="primary" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">业务系统登陆</button>
+      </block>
+      <block wx:if="{{hasLogin === false}}">
+        <text class="page-body-text">每个微信号中仅需登录一次</text>
+        <button class="page-body-button" type="primary" bindtap="login">微信登录</button>
+      </block>
+      </view>
+      </block>                
+    </view>
+  </view>

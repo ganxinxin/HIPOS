@@ -1,0 +1,252 @@
+
+<wxs src='../../styles/filter.wxs' module='filters' />
+    <!--设备信息--> 
+    <view class="card">
+        <view class="card-item" >
+              <image class="card-item-icon" src="/images/table.png"></image>
+              <text class="card-item-name">设备信息</text>
+        </view>  
+        <view class="data-wrapper">
+            <view class="data-left">
+                <view class="content">设备名称：<text class="text-pre">{{eqtName}}</text></view>
+                <view class="content">设备类型：<text class="text-pre">{{eqtTypeName}}</text></view>
+                <view class="content">设备状态：
+                  <text class='text-pre' style='color:{{filters.status(eqtState).y}}'>{{filters.status(eqtState).x}}</text>
+                </view>
+                <view class="content">IP：<text class="text-pre">{{eqtIp}}</text></view>
+            </view>
+            <view class="data-right">
+                <view class="content">所属平台：<text class="text-pre">{{eqtPlatform}}</text></view>
+                <view class="content">所属部门：<text class="text-pre">{{depName}}</text></view>
+                <view class="content">所属组织：<text class="text-pre">{{orgName}}</text></view>
+                <view class="content">MAC：<text class="text-pre">{{eqtMac}}</text></view>
+            </view>
+        </view>
+    </view>
+
+    <!--内存分布图--> 
+    <view class="card">
+        <canvas canvas-id="lineCanvas" disable-scroll="false" class="canvas" bindtouchstart="touchHandler" hidden='{{canvashidden}}'
+        bindtouchmove="moveHandler" bindtouchend="touchEndHandler">
+        </canvas>
+    </view> 
+    
+    <!--list-->
+    <scroll-view scroll-y="true">
+      <view class="nav_section" >  
+          <view wx:if="{{dataListShow}}">
+              <block wx:for="{{dataListShow}}" wx:key="item.id">
+                  <view class="nav_section_items" >
+                      <!--image-->
+                      <view class="section_image">
+                          <image src="{{item.imageUrl}}"></image>
+                      </view>
+                      <!--content-->
+                      <view class="section_cont"  data-aid="{{item.id}}">
+                          <view class="section_cont">{{item.textItem1}}</view>
+                          <view class="section_cont">{{item.textItem2}}</view>
+                          <view class="section_cont">{{item.textItem3}}</view>
+                          <view class="section_cont">{{item.textItem4}}</view>
+                      </view>
+
+                      <view wx:if="{{item.ItemIndex == 1}}">  
+                          <!--book-->
+                          <view class="section_book" bindtap="NetDetailInfo" data-aid="{{item.id}}">
+                              <text>更多</text>
+                          </view>
+                          <w-popup 
+                              visible="{{ popupNet}}"
+                              position="left"
+                              bind:close="handleClose"
+                            >
+                            <view wx:for="{{dataContext}}"  wx:for-item="itemName" wx:key="index">
+                                <view class="card" >
+                                        <view class="content">登录用户：<text class="text-pre">{{itemName.user}}</text></view>
+                                        <view class="content">用户所属权限组：
+                                          <text class="text-pre">{{itemName.userGroup}}</text>
+                                        </view>
+                                        <view class="content">蓝牙：<text class="text-pre">{{itemName.btStatus}}</text></view>
+                                        <view class="content">网络状态：<text class="text-pre">{{itemName.netStatus}}</text></view>
+                                        <view class="content">IMEI号：<text class="text-pre">{{itemName.imei}}</text></view>
+                                        <view class="content">IMSI号：<text class="text-pre">{{itemName.imsi}}</text></view>
+                                </view>
+                                
+                            </view>
+                          </w-popup>
+                      </view>
+                  
+                      <view wx:if="{{item.ItemIndex == 2}}">
+                          <!--book-->
+                          <view class="section_book" bindtap="CPUDetailInfo" data-aid="{{item.id}}">
+                              <text>更多</text>
+                          </view>
+                          <w-popup 
+                              visible="{{ popupCPU}}"
+                              position="left"
+                              bind:close="handleClose"
+                            >
+                            <view wx:for="{{dataCPU}}"  wx:for-item="itemName" wx:key="index">
+                                <view class="card">
+                                    <view class="content">CPU厂商：<text class="text-pre">{{itemName.cpuProdby}}</text></view>
+                                    <view class="content">CPU型号：<text class="text-pre">{{itemName.cpuType}}</text> </view>
+                                    <view class="content">CPU主频：<text class="text-pre">{{itemName.cpuSpeed}}</text></view>
+                                    <view class="content">核心数：<text class="text-pre">{{itemName.dieNum}}</text></view>
+                                    <view class="content">逻辑处理器个数：
+                                       <text class="text-pre">{{itemName.processorNum}}                                                                                     </text></view>
+                                    <view class="content">处理器版本：<text class="text-pre">{{itemName.edition}}</text></view>
+                                </view>
+                            </view>
+                           </w-popup>
+                     </view>
+
+                   <view wx:if="{{item.ItemIndex == 3}}">
+                        <!--book-->
+                        <view class="section_book" bindtap="HDDetailInfo" data-aid="{{item.id}}">
+                            <text>更多</text>
+                        </view>
+                        <w-popup 
+                            visible="{{ popupHD}}"
+                            position="left"
+                            bind:close="handleClose"
+                          >
+                          <view wx:for="{{dataHD}}"  wx:for-item="itemName" wx:key="index">
+                              <view class="card">
+                                    <view class="content">硬盘厂商：<text class="text-pre">{{itemName.hdProdby}}</text></view>
+                                    <view class="content">硬盘型号：<text class="text-pre">{{itemName.hdModel}}</text> </view>
+                                    <view class="content">硬盘大小：<text class="text-pre">{{itemName.hdSize}}</text></view>
+                                    <view class="content">接口类型：<text class="text-pre">{{itemName.hdInterface}}</text></view>
+                                    <view class="content">分区：<text class="text-pre">{{itemName.hdPartitions}} </text></view>
+                                    <view class="content">固件版本：<text class="text-pre">{{itemName.hdCache}}</text></view>
+                                    <view class="content">剩余磁盘空间：<text class="text-pre">{{itemName.hdSpace}}</text></view>
+                              </view>
+                          </view>
+                        </w-popup>
+                   </view>
+
+                   <view wx:if="{{item.ItemIndex == 4}}">
+                        <!--book-->
+                        <view class="section_book" bindtap="MemoryDetailInfo" data-aid="{{item.id}}">
+                            <text>更多</text>
+                        </view>
+                        <w-popup 
+                            visible="{{ popupMemory}}"
+                            position="left"
+                            bind:close="handleClose"
+                          >
+                          <view wx:for="{{dataMemory}}"  wx:for-item="itemName" wx:key="index">
+                              <view class="card">
+                                    <view class="content">内存厂商：<text class="text-pre">{{itemName.prodBy}}</text></view>
+                                    <view class="content">内存类型：<text class="text-pre">{{itemName.memType}}</text> </view>
+                                    <view class="content">内存大小：<text class="text-pre">{{itemName.memSize}}</text></view>
+                                    <view class="content">型号：<text class="text-pre">{{itemName.modelNum}}</text></view>
+                                    <view class="content">序列号：<text class="text-pre">{{itemName.serialno}}</text></view>
+                              </view>
+                          </view>
+                        </w-popup>
+                   </view>
+
+
+                   <view wx:if="{{item.ItemIndex == 5}}">
+                        <!--book-->
+                        <view class="section_book" bindtap="MainBoardDetailInfo" data-aid="{{item.id}}">
+                            <text>更多</text>
+                        </view>
+                        <w-popup 
+                            visible="{{popupMainBoard}}"
+                            position="left"
+                            bind:close="handleClose"
+                          >
+                          <view wx:for="{{dataMainBoard}}"  wx:for-item="itemName" wx:key="index">
+                              <view class="card">
+                                    <view class="content">生产商：<text class="text-pre">{{itemName.manufacturer}}</text></view>
+                                    <view class="content">主板型号：<text class="text-pre">{{itemName.boardType}}</text> </view>
+                                    <view class="content">芯片组：<text class="text-pre">{{itemName.chipSet}}</text></view>
+                                    <view class="content">BIOS版本：<text class="text-pre">{{itemName.biosVer}}</text></view>
+                                    <view class="content">序列号：<text class="text-pre">{{itemName.serialno}}</text></view>
+                              </view>
+                          </view>
+                        </w-popup>
+                   </view>
+
+                   <view wx:if="{{item.ItemIndex == 6}}">
+                        <!--book-->
+                        <view class="section_book" bindtap="SysDetailInfo" data-aid="{{item.id}}">
+                            <text>更多</text>
+                        </view>
+                        <w-popup 
+                            visible="{{popupSys}}"
+                            position="left"
+                            bind:close="handleClose"
+                          >
+                          <view wx:for="{{dataSys}}"  wx:for-item="itemName" wx:key="index">
+                              <view class="card">
+                                    <view class="content">计算机厂商：<text class="text-pre">{{itemName.computerMaker}}</text></view>
+                                    <view class="content">计算机名：<text class="text-pre">{{itemName.computerName}}</text> </view>
+                                    <view class="content">计算机型号：<text class="text-pre"> {{itemName.computerModel}}</text></view>
+                                    <view class="content">操作系统：<text class="text-pre">{{itemName.osName}}</text></view>
+                                    <view class="content">系统架构：<text class="text-pre">{{itemName.architecture}}</text></view>
+                                    <view class="content">内核版本：<text class="text-pre">{{itemName.kernelVersion}}</text></view>
+                              </view>
+                          </view>
+                        </w-popup>
+                   </view>
+
+                   <view wx:if="{{item.ItemIndex == 7}}">
+                        <!--book-->
+                        <view class="section_book" bindtap="SoftDetailInfo" data-aid="{{item.id}}">
+                            <text>更多</text>
+                        </view>
+                        <w-popup 
+                            visible="{{popupSoft}}"
+                            position="left"
+                            bind:close="handleClose"
+                          >
+                          <view wx:for="{{dataSoft}}"  wx:for-item="itemName" wx:key="index">
+                              <view class="card">
+                                    <view class="content">软件名称：<text class="text-pre">{{itemName.softName}}</text></view>
+                                    <view class="content">软件厂商：<text class="text-pre">{{itemName.softProd}}</text> </view>
+                                    <view class="content">软件安装位置：<text class="text-pre">{{itemName.softPath}}                                                        </text></view>
+                                    <view class="content">软件版本：<text class="text-pre">{{itemName.softVersion}}</text></view>
+                                    <view class="content">安装日期：<text class="text-pre">{{itemName.installDate}}</text></view>
+                                    <view class="content">监控日期：<text class="text-pre">{{itemName.gmtGetDate}}</text></view>
+                              </view>
+                          </view>
+                        </w-popup>
+                   </view>
+
+                   <view wx:if="{{item.ItemIndex == 8}}">
+                        <!--book-->
+                        <view class="section_book" bindtap="ProcessDetailInfo" data-aid="{{item.id}}">
+                            <text>更多</text>
+                        </view>
+                        <w-popup 
+                            visible="{{popupProcess}}"
+                            position="left"
+                            bind:close="handleClose"
+                          >
+                          <view wx:for="{{dataProcess}}"  wx:for-item="itemName" wx:key="index">
+                              <view class="card">
+                                    <view class="content">进程名称：<text class="text-pre">{{itemName.processName}}</text></view>
+                                    <view class="content">进程ID：<text class="text-pre">{{itemName.processId}}</text> </view>
+                                    <view class="content">路径：<text class="text-pre">{{itemName.processUser}}</text></view>
+                                    <view class="content">描述：<text class="text-pre">{{itemName.description}}</text></view>
+                                    <view class="content">监控日期：<text class="text-pre">{{itemName.gmtGetDate}}</text></view>
+                              </view>
+                          </view>
+                        </w-popup>
+                   </view>
+
+              </view>
+            </block>
+          </view>  
+      </view>
+    </scroll-view>
+
+
+
+
+
+
+     
+
+

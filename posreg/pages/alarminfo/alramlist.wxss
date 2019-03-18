@@ -1,0 +1,36 @@
+/* pages/alarminfo/alramlist.wxss */
+@import "../common/foot.wxss";
+
+.search-area{
+  height: 85rpx;
+  line-height: 85rpx;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #888;
+  border-bottom: 1rpx solid #efefef;
+	padding: 1rem 0.5rem;
+}
+
+/* 日期选择 */
+.search-area picker {
+  /* background-color: yellow; */
+  color: #64bff1;
+  height: 55rpx;
+  line-height: 55rpx;
+  margin: 0 2%;
+  padding: 0 2%;
+  border: 1rpx solid #64bff1;
+  border-radius: 30rpx;
+}
+
+  /* 列表 */
+.themes-list{ background: #FFF; display: block; margin-bottom: 20px; line-height: 20px; }
+.themes-list-box{ display: block; position: relative; padding: 16px 20px; border-bottom: 1px solid #efefef; }
+.themes-list-thumbnail{ position: absolute; left: 10px; top: 14px; height: 50px; width: 50px; }
+.themes-list-number{ font-size: 14px;border-radius: 4px; border: 1px solid #F2F2F2;}
+.themes-list-main{ margin-left: 60px; }
+.themes-list-description{text-overflow:ellipsis;white-space:nowrap;  font-size: 14px; color: #444; height: 30px; line-height: 20px; overflow: hidden; }
+.themes-list-time{ text-overflow:ellipsis;white-space:nowrap; font-size: 12px; color: rgb(59, 53, 53); height: 20px; line-height: 10px; overflow: hidden; }
+

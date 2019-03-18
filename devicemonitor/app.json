@@ -1,0 +1,19 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/faultinfo/faultreport",
+    "pages/faultinfo/faultdetail",
+    "pages/posinfo/posconfigure",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#00A8A8",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

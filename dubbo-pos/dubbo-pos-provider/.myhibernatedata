@@ -1,0 +1,20 @@
+#MyEclipse Hibernate Properties
+#Wed Sep 05 17:55:48 CST 2018
+genBasicCompId=true
+sessionFactoryName=
+profile=
+daoSFId=
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=/dubbo-pos-provider/hibernate.reveng.xml
+configFile=/dubbo-pos-provider/src/main/resources/hibernate.cfg.xml
+createConfigFile=false

@@ -1,0 +1,22 @@
+<!--pages/shopinfo/shoplist.wxml-->
+
+<import src="../common/foot.wxml" />
+
+<!-- loading -->
+<loading hidden="{{hidden}}">
+    加载中...
+</loading>
+
+<scroll-view scroll-y="true" style="color: {{elecolor}};font-size: {{eleFontsize}}" bindscrolltolower="bindDownLoad" bindscroll="scroll">
+  <!-- 列表 -->
+    <view class="themes-list">
+      <view class="themes-list-box" wx:for="{{list}}" wx:for-item="itemName" data-index="{{index}} "bindtap='gotoShopInfoDetail' >
+          <view class="themes-list-main">
+            <view class="themes-list-shopdetail">门店编号：{{itemName.shopcode}}</view>
+            <view class="themes-list-shopdetail">门店名称：{{itemName.shopname}}</view>
+            <view class="themes-list-shopdetail">地理位置：{{itemName.shopaddr}}</view>
+          </view>
+      </view>
+    </view>
+</scroll-view>
+<template is="foot"/> 

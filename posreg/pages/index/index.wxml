@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="page-body">
+    <view class="page-section">
+    <block wx:if="{{weixinid==''||weixinid==null}}">
+      <block wx:if="{{hasLogin === true}}">
+         <text class="page-body-text">微信已登录</text>
+         <button class="page-right-button"  type="primary" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">业务系统登陆</button>
+      </block>
+      <block wx:if="{{hasLogin === false}}">
+        <text class="page-body-text">每个微信号中仅需登录一次</text>
+        <button class="page-body-button" type="primary" bindtap="login">微信登录</button>
+      </block>
+    </block>
+    <block wx:if="{{weixinid!=''&&weixinid!=null}}">
+        <image class="scan-image" src="../../image/scan.png" bindtap='scanCode' />
+        <text class="page-scan-text">请扫码机器二维码</text>
+        <view class="bottom-center"><button class="page-right-button" bindtap='openinput'>
+          <text class="input-text1">没扫出来? </text>
+          <text class="input-text2">手工输入</text></button>
+        </view>
+    </block>
+    </view>
+  </view>

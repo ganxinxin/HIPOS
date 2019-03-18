@@ -1,0 +1,157 @@
+/* 重点在于阴影的设计 */
+.card {
+    border: 1px solid #00A8A8;
+    border-radius: 5px;
+    background-color: #ffffff; 
+    box-shadow: 2px 1px 1px #cccccc;
+    margin: 5px;
+    margin-top: 20rpx;
+    position: relative;
+    padding-left: 5px;
+}
+
+/*设备信息*/
+.card-item {
+    display: flex;
+    align-items: center;
+    height: 60rpx;
+    margin-left: 10rpx;
+}
+.card-item-icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+}
+.card-item-name {
+   font-weight:600;
+    font-family: "黑体";
+    letter-spacing: 1px;
+    font-size: 36rpx;
+  
+}
+.data-wrapper{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+.data-wrapper .data-left{
+    width:55%;
+}
+.data-wrapper .data-left view{
+    padding-left: 10rpx;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    display: block;
+}
+.data-wrapper .data-right{
+    width:45%;
+}
+.data-wrapper .data-right view{
+   
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    display: block;
+}
+.content{
+    font-size:30rpx;
+    font-family: "黑体";
+    font-weight:600;
+}
+.text-pre{
+  font-size: 28rpx;
+  font-weight:300;
+  word-break:break-all;
+}
+/* 折线图 */
+.canvas{
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    width:90%;
+}
+
+/* 配置信息 */
+.recommend {
+    width: 100%;
+    height: 40rpx;
+    text-align: center;
+    padding-top: 20rpx; 
+    font-size: 30rpx;
+    color: #777;
+    position: relative;
+}
+.recommend:before {
+    position: absolute;
+    content: '';
+    left: 70rpx;
+    top: 40rpx;
+    width: 100rpx;
+    height: 1rpx;
+    background-color: #dcdcdc;
+}
+.recommend:after {
+    position: absolute;
+    content: '';
+    right: 70rpx;
+    top: 40rpx;
+    width: 100rpx;
+    height: 1rpx;
+    background-color: #dcdcdc;
+}
+
+.nav_section_items{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:30rpx;
+    padding: 20rpx;
+    border-top: 1px solid #00A8A8;
+    position: relative;
+}
+
+.nav_section_items .section_image{
+    width:200rpx;
+    height:180rpx;
+}
+.nav_section_items .section_image image{
+    width:100%;
+    height:100%;
+}
+.nav_section_items .section_cont{
+    width:380rpx;
+    font-size:26rpx;
+}
+.nav_section_items .section_cont view{
+    padding-left: 20rpx;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    display: block;
+}
+
+.nav_section_items .section_cont .section_cont{
+    font-size:32rpx;
+    font-family: "黑体";
+}
+.nav_section_items .section_book{
+    width:100rpx;
+    height:40rpx;
+    font-size:26rpx;
+    text-align: center;
+    margin-top:160rpx;
+    color:#d24a58;
+}
+.nav_section_items .section_book:active{
+    background:#ddd;
+}
+.cover-view {
+  margin-left: 0px;
+  margin-top: 0px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
